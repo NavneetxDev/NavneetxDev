@@ -1,34 +1,28 @@
 name: Generate Snake Contribution Graph
 
-# Controls when the action will run (weekly on Monday at 12:00 AM UTC)
 on:
+  # Schedule to run weekly
   schedule:
-    # Runs at 12:00 AM every Monday (UTC)
-    - cron: "0 0 * * 1"
-
-  # Allows manual triggering using GitHub Actions workflow tab
+    - cron: "0 0 * * 1"  # Every Monday at midnight
+  
+  # Allows manual trigger
   workflow_dispatch:
 
-# Job that will be executed
 jobs:
   generate:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks out the repository
       - uses: actions/checkout@v3
 
-      # Generates the snake contribution graph
       - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      # Uploads the generated snake graph to the GitHub repository
       - name: Upload GitHub Snake SVG
         uses: actions/upload-artifact@v3
         with:
