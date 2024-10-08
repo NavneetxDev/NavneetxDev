@@ -43,6 +43,6 @@
 
 <br clear="both">
 
-<img src="https://raw.githubusercontent.com/NavneetxDev/NavneetxDev/output/snake.svg" alt="Snake animation" />
+<img src="https://raw.githubusercontent.com/NavneetxDev/NavneetxDev/main/dict/github-snake-dark.svg" alt="Snake animation" />
 
 ###
