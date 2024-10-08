@@ -1,19 +1,36 @@
-- uses: Platane/snk@v3
-  with:
-    # github user name to read the contribution graph from (**required**)
-    # using action context var `github.repository_owner` or specified user
-    github_user_name: ${{ github.repository_owner }}
+name: Generate Snake Contribution Graph
 
-    # list of files to generate.
-    # one file per line. Each output can be customized with options as query string.
-    #
-    #  supported options:
-    #  - palette:     A preset of color, one of [github, github-dark, github-light]
-    #  - color_snake: Color of the snake
-    #  - color_dots:  Coma separated list of dots color.
-    #                 The first one is 0 contribution, then it goes from the low contribution to the highest.
-    #                 Exactly 5 colors are expected.
-    outputs: |
-      dist/github-snake.svg
-      dist/github-snake-dark.svg?palette=github-dark
-      dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+# Controls when the action will run (weekly on Monday at 12:00 AM UTC)
+on:
+  schedule:
+    # Runs at 12:00 AM every Monday (UTC)
+    - cron: "0 0 * * 1"
+
+  # Allows manual triggering using GitHub Actions workflow tab
+  workflow_dispatch:
+
+# Job that will be executed
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out the repository
+      - uses: actions/checkout@v3
+
+      # Generates the snake contribution graph
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+
+      # Uploads the generated snake graph to the GitHub repository
+      - name: Upload GitHub Snake SVG
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-snake-artifacts
+          path: dist/
