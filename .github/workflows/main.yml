@@ -35,6 +35,6 @@ jobs:
 
       # Step 4: Push the changes back to the repository
       - name: Push changes
-        uses: ad-m/github-push-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin HEAD:${{ github.ref }}
+          # Ensure the push command is using the appropriate branch reference
