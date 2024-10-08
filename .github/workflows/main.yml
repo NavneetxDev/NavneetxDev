@@ -2,26 +2,39 @@ name: Generate Snake Contribution Graph
 
 on:
   schedule:
-    - cron: "0 0 * * 1"  # Every Monday at midnight (UTC)
-  workflow_dispatch:  # Allows manual trigger
+    # Runs at 12:00 AM every Monday (UTC)
+    - cron: "0 0 * * 1"
+
+  # Allows manual trigger
+  workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository to get access to its files
       - uses: actions/checkout@v3
 
+      # Step 2: Generate the snake contribution graph
       - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            dict/github-snake.svg
+            dict/github-snake-dark.svg?palette=github-dark
+            dict/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Upload GitHub Snake SVG
-        uses: actions/upload-artifact@v3
+      # Step 3: Commit the generated SVG and GIF files back to the repository
+      - name: Commit files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add dict/
+          git commit -m "Generated snake contribution graph" || echo "No changes to commit"
+
+      # Step 4: Push the changes back to the repository
+      - name: Push changes
+        uses: ad-m/github-push-action@v1
         with:
-          name: github-snake-artifacts
-          path: dist/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
