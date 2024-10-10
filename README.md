@@ -1,7 +1,29 @@
-<h3 align="left">Hey good to see you in my profile</h3>
+<h3 align="center">
+  Hi !! Good to see you here 💙
+</h3>
+
+- 👋 Hey , <b> I am Navneet</b> a fellow explorer and wonderer  .
+- 👀 I’m interested in Problem solving / Designing & Developing products and so on .
+- 💞️ Open to work/Collaborate on projects 
+- 📫 Checkout my work here {website under construction}
 
 ###
+<h3 align="left">My Socials !! </h3>
+<div align="left">
+  <a href="mailto:navneet1lakhera@gmail.com" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Resume&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
+  </a>
+  <a href="https://www.linkedin.com/in/navneet-lakhera-656895238" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Linkedln&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
+  </a>
+  <a href="mailto:navneet1lakhera@gmail.com" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Resume&logo=file&label=&color=1769ff&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="behance logo"  />
+  </a>  
+  
+</div>
+ <br>
 
+</div>
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
   <img width="12" />
@@ -19,18 +41,7 @@
 </div>
 
 ###
-<h3 align="left">Connect with me!</h3>
-<div align="left">
-  <a href="mailto:navneet1lakhera@gmail.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Resume&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
-  </a>
-  <a href="https://www.linkedin.com/in/navneet-lakhera-656895238" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Linkedln&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
-  </a>
-  <a href="mailto:navneet1lakhera@gmail.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Resume&logo=behance&label=&color=1769ff&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="behance logo"  />
-  </a>
-</div>
+
 
 ###
 
