@@ -55,7 +55,7 @@
 | 🎁 Projects                           | 🛠 Tech Stack                    | 📄 Description                                                                 |
 |---------------------------------------|----------------------------------|-------------------------------------------------------------------------------|
 | [Skye](#)                        | Python, GenAI, Gemini API                | Voice and text controlled advanced AI chatbot .                            |
-| [Under contnstruction](#)                        | TypeScript, React, Chrome API    |   Project is under construction please check again in a month    |
+| [Brain vs Heart](https://brain-vs-heart.vercel.app/)                        | React, Vitejs     |   Project to increase your productivity    |
 | [Under construction](#)                        | Node.js, Express, GraphQL        |  Project is under construction please check again in a month   |
 
 </div>
